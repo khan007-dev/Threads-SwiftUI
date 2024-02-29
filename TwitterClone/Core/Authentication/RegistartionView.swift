@@ -14,6 +14,7 @@ struct RegistartionView: View {
     @State private var password = ""
     @State private var fullName = ""
     @State private var userName = ""
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack {
             Spacer()
@@ -41,7 +42,7 @@ struct RegistartionView: View {
             
             Button(action: {
                 
-                
+                dismiss()
             }, label: {
                 Text("Sign Up")
                     .modifier(ButtonModifedFile())
@@ -57,7 +58,7 @@ struct RegistartionView: View {
             }, label: {
                 HStack (spacing: 3) {
                     Text("Don't have an account")
-                    Text("Sign In")
+                    Text("Sign Up")
                         .fontWeight(.semibold)
                 }
                 .foregroundStyle(.black)
