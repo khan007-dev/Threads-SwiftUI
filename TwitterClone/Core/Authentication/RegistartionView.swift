@@ -18,7 +18,7 @@ struct RegistartionView: View {
     var body: some View {
         VStack {
             Spacer()
-            Image(systemName: "person")
+            Image(.X)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 120, height: 120)
@@ -42,7 +42,7 @@ struct RegistartionView: View {
             
             Button(action: {
                 
-                dismiss()
+        
             }, label: {
                 Text("Sign Up")
                     .modifier(ButtonModifedFile())
@@ -54,7 +54,7 @@ struct RegistartionView: View {
             
             
             Button(action: {
-                
+                dismiss()
             }, label: {
                 HStack (spacing: 3) {
                     Text("Don't have an account")

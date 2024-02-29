@@ -16,7 +16,7 @@ struct LoginView: View {
         NavigationStack{
             VStack {
                 Spacer()
-                Image(systemName: "person")
+                Image(.X)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 120, height: 120)
@@ -57,12 +57,13 @@ struct LoginView: View {
                 
                 NavigationLink {
                    RegistartionView()
+                        .navigationBarBackButtonHidden(true)
                 } label: {
                     HStack (spacing: 3) {
                         Text("Don't have an account")
                         Text("Sign Up")
                             .fontWeight(.semibold)
-                    }
+                    }.foregroundStyle(.black)
                     .font(.footnote)
                 }.padding(.vertical, 16)
             }
