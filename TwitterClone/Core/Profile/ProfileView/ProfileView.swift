@@ -8,8 +8,94 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+    @State private var selectedFilter: ProfileThreadFilter = .threds
+    @Namespace var animation
+    private var fitlerBarWidht: CGFloat {
+        let count = CGFloat(ProfileThreadFilter.allCases.count)
+        return UIScreen.main.bounds.width / count - 16
+    }
     var body: some View {
-        Text("Profile, World!")
+       
+        ScrollView(showsIndicators:false) {
+            
+            VStack (spacing: 20) {
+                HStack {
+                    VStack (alignment: .leading, spacing: 12) {
+                        VStack (alignment: .leading, spacing: 4) {
+                            
+                            Text("AB Waris Khan")
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                            
+                            Text("Ab.khan")
+                                .font(.subheadline)
+                            
+                        }
+                        
+                      
+                        
+                        Text("Welcome to my Instagram Profile")
+                        
+                        Text("2 follwers")
+                            .font(.caption)
+                            .foregroundStyle(.gray)
+                    }
+                    Spacer()
+                    
+                    CircularProfileImageView()
+                }
+                
+                Button(action: {}, label: {
+                    Text("Follow")
+                        .font(.subheadline)
+                        .foregroundStyle(.white)
+                        .frame(width: 352, height: 32)
+                        .background(.black)
+                        .cornerRadius(8)
+                })
+                
+            
+                VStack {
+                    HStack {
+                        ForEach(ProfileThreadFilter.allCases) { filter in
+                        
+                            VStack {
+                                Text(filter.title)
+                                    .font(.subheadline)
+                                    .fontWeight(selectedFilter == filter ? .semibold : .regular)
+                                
+                                if selectedFilter == filter {
+                                    Rectangle()
+                                        .foregroundStyle(.black)
+                                        .frame(width: fitlerBarWidht, height: 1)
+                                        .matchedGeometryEffect(id: "item", in: animation)
+                                } else {
+                                    Rectangle()
+                                        .foregroundStyle(.clear)
+                                        .frame(width: fitlerBarWidht, height: 1)
+                                }
+                            }.onTapGesture {
+                                withAnimation(.spring()) {
+                                    selectedFilter = filter
+                                }
+                            }
+                        }
+                    }
+                }
+                LazyVStack {
+                   
+                    ForEach (0...10, id: \.self) { thread in
+                        ThreadCellView()
+                    }
+                }
+                .padding(.vertical, 8)
+            }
+            
+        
+            
+        }
+        .padding(.horizontal)
     }
 }
 
