@@ -26,6 +26,7 @@
 		C970EE082B9267220081968C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970EE072B9267220081968C /* UserCell.swift */; };
 		C970EE2B2B93E08C0081968C /* ProfileThreadFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970EE2A2B93E08C0081968C /* ProfileThreadFilter.swift */; };
 		C99425252B9511DD00715904 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99425242B9511DD00715904 /* EditProfileView.swift */; };
+		C99425C02B98988200715904 /* CreateThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99425BF2B98988200715904 /* CreateThreadView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		C970EE072B9267220081968C /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		C970EE2A2B93E08C0081968C /* ProfileThreadFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileThreadFilter.swift; sourceTree = "<group>"; };
 		C99425242B9511DD00715904 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		C99425BF2B98988200715904 /* CreateThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateThreadView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				C970EDC12B909F1D0081968C /* Explore */,
 				C970EDBE2B909EBE0081968C /* Feed */,
 				C970ED822B8F74690081968C /* Authentication */,
+				C99425BD2B98985700715904 /* ThreadCreations */,
 				C970ED832B8F74710081968C /* Root */,
 				C970EDBB2B909B060081968C /* TabBar */,
 			);
@@ -288,6 +291,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		C99425BD2B98985700715904 /* ThreadCreations */ = {
+			isa = PBXGroup;
+			children = (
+				C99425BE2B98986D00715904 /* View */,
+			);
+			path = ThreadCreations;
+			sourceTree = "<group>";
+		};
+		C99425BE2B98986D00715904 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C99425BF2B98988200715904 /* CreateThreadView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -370,6 +389,7 @@
 				C970EE062B9266750081968C /* CircularProfileImageView.swift in Sources */,
 				C970EE082B9267220081968C /* UserCell.swift in Sources */,
 				C970ED852B8F74C10081968C /* LoginView.swift in Sources */,
+				C99425C02B98988200715904 /* CreateThreadView.swift in Sources */,
 				C970ED712B8F74020081968C /* ContentView.swift in Sources */,
 				C970ED6F2B8F74020081968C /* TwitterCloneApp.swift in Sources */,
 				C970EDBD2B909B490081968C /* TwitterTabView.swift in Sources */,
