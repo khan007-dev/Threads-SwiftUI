@@ -17,85 +17,97 @@ struct ProfileView: View {
     }
     var body: some View {
        
-        ScrollView(showsIndicators:false) {
-            
-            VStack (spacing: 20) {
-                HStack {
-                    VStack (alignment: .leading, spacing: 12) {
-                        VStack (alignment: .leading, spacing: 4) {
-                            
-                            Text("AB Waris Khan")
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                            
-                            Text("Ab.khan")
-                                .font(.subheadline)
-                            
-                        }
-                        
-                      
-                        
-                        Text("Welcome to my Instagram Profile")
-                        
-                        Text("2 follwers")
-                            .font(.caption)
-                            .foregroundStyle(.gray)
-                    }
-                    Spacer()
-                    
-                    CircularProfileImageView()
-                }
+        NavigationStack {
+            ScrollView(showsIndicators:false) {
                 
-                Button(action: {}, label: {
-                    Text("Follow")
-                        .font(.subheadline)
-                        .foregroundStyle(.white)
-                        .frame(width: 352, height: 32)
-                        .background(.black)
-                        .cornerRadius(8)
-                })
-                
-            
-                VStack {
+                VStack (spacing: 20) {
                     HStack {
-                        ForEach(ProfileThreadFilter.allCases) { filter in
-                        
-                            VStack {
-                                Text(filter.title)
-                                    .font(.subheadline)
-                                    .fontWeight(selectedFilter == filter ? .semibold : .regular)
+                        VStack (alignment: .leading, spacing: 12) {
+                            VStack (alignment: .leading, spacing: 4) {
                                 
-                                if selectedFilter == filter {
-                                    Rectangle()
-                                        .foregroundStyle(.black)
-                                        .frame(width: fitlerBarWidht, height: 1)
-                                        .matchedGeometryEffect(id: "item", in: animation)
-                                } else {
-                                    Rectangle()
-                                        .foregroundStyle(.clear)
-                                        .frame(width: fitlerBarWidht, height: 1)
-                                }
-                            }.onTapGesture {
-                                withAnimation(.spring()) {
-                                    selectedFilter = filter
+                                Text("AB Waris Khan")
+                                    .font(.title2)
+                                    .fontWeight(.semibold)
+                                
+                                Text("Ab.khan")
+                                    .font(.subheadline)
+                                
+                            }
+                            
+                          
+                            
+                            Text("Welcome to my Instagram Profile")
+                            
+                            Text("2 follwers")
+                                .font(.caption)
+                                .foregroundStyle(.gray)
+                        }
+                        Spacer()
+                        
+                        CircularProfileImageView()
+                    }
+                    
+                    Button(action: {}, label: {
+                        Text("Follow")
+                            .font(.subheadline)
+                            .foregroundStyle(.white)
+                            .frame(width: 352, height: 32)
+                            .background(.black)
+                            .cornerRadius(8)
+                    })
+                    
+                
+                    VStack {
+                        HStack {
+                            ForEach(ProfileThreadFilter.allCases) { filter in
+                            
+                                VStack {
+                                    Text(filter.title)
+                                        .font(.subheadline)
+                                        .fontWeight(selectedFilter == filter ? .semibold : .regular)
+                                    
+                                    if selectedFilter == filter {
+                                        Rectangle()
+                                            .foregroundStyle(.black)
+                                            .frame(width: fitlerBarWidht, height: 1)
+                                            .matchedGeometryEffect(id: "item", in: animation)
+                                    } else {
+                                        Rectangle()
+                                            .foregroundStyle(.clear)
+                                            .frame(width: fitlerBarWidht, height: 1)
+                                    }
+                                }.onTapGesture {
+                                    withAnimation(.spring()) {
+                                        selectedFilter = filter
+                                    }
                                 }
                             }
                         }
                     }
-                }
-                LazyVStack {
-                   
-                    ForEach (0...10, id: \.self) { thread in
-                        ThreadCellView()
+                    LazyVStack {
+                       
+                        ForEach (0...10, id: \.self) { thread in
+                            ThreadCellView()
+                        }
                     }
+                    .padding(.vertical, 8)
                 }
-                .padding(.vertical, 8)
+                
+            
+                
+            }.toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        AuthService.shared.signOut()
+                    } label: {
+                        Image(systemName: "line.3.horizontal")
+                    }
+
+                }
             }
-            
-        
-            
+            .padding(.horizontal)
         }
-        .padding(.horizontal)
+       
     }
 }
 
