@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    @StateObject var viewModel = ProfileViewModel()
     @State private var selectedFilter: ProfileThreadFilter = .threds
     @Namespace var animation
     private var fitlerBarWidht: CGFloat {
