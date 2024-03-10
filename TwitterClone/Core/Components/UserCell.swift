@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct UserCell: View {
+    let user: User
     var body: some View {
         HStack {
            CircularProfileImageView()
             
             VStack (alignment: .leading) {
-                Text("Ab Waris")
+                Text(user.username)
                     .fontWeight(.semibold)
-                Text("Khan")
+                Text(user.fullName)
                    
             }.font(.footnote)
             
@@ -32,6 +33,6 @@ struct UserCell: View {
     }
 }
 
-#Preview {
-    UserCell()
-}
+//#Preview {
+//    UserCell(user: dev.user)
+//}
