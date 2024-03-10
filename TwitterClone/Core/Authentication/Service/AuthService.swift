@@ -25,6 +25,7 @@ class AuthService {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             self.userSession = result.user
+            try await UserService.shared.fetchCurentUser()
         } catch {
             print("failed \(error.localizedDescription)")
         }
@@ -45,6 +46,7 @@ class AuthService {
     func signOut() {
         try? Auth.auth().signOut()
         self.userSession = nil 
+        UserService.shared.reset()
     }
     
     @MainActor
@@ -58,6 +60,7 @@ class AuthService {
             guard let userData = try? Firestore.Encoder().encode(user) else {return}
             try await Firestore.firestore().collection("users").document(id).setData(userData)
             
+            UserService.shared.currentUser = user
         
     }
 }
