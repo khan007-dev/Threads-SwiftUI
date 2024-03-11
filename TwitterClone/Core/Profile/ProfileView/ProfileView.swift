@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    
-    @StateObject var viewModel = ProfileViewModel()
+    let user = User(id: NSUUID().uuidString, fullName: "Ab Waris", email: "ab@gmail.com", username: "ABWARIS")
     @State private var selectedFilter: ProfileThreadFilter = .threds
     @Namespace var animation
     private var fitlerBarWidht: CGFloat {
@@ -17,51 +16,27 @@ struct ProfileView: View {
         return UIScreen.main.bounds.width / count - 16
     }
     
-    private var currentUser:User? {
-        return viewModel.currentUser
-    }
+    
     var body: some View {
        
-        NavigationStack {
             ScrollView(showsIndicators:false) {
                 
                 VStack (spacing: 20) {
-                    HStack {
-                        VStack (alignment: .leading, spacing: 12) {
-                            VStack (alignment: .leading, spacing: 4) {
-                                
-                                Text(currentUser?.fullName ?? "")
-                                    .font(.title2)
-                                    .fontWeight(.semibold)
-                                
-                                Text(currentUser?.username ?? "")
-                                    .font(.subheadline)
-                                
-                            }
-                            
-                          
-                            if let bio = currentUser?.bio {
-                                Text(bio)
-                                    .font(.subheadline)
-                            }
-                        
-                            
-                            Text("2 follwers")
-                                .font(.caption)
-                                .foregroundStyle(.gray)
-                        }
-                        Spacer()
-                        
-                        CircularProfileImageView()
-                    }
+               ProfileHeaderView()
                     
-                    Button(action: {}, label: {
+                    Button(action: {
+                        
+                    }, label: {
                         Text("Follow")
                             .font(.subheadline)
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.black)
                             .frame(width: 352, height: 32)
-                            .background(.black)
+                            .background(.white)
                             .cornerRadius(8)
+                            .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(Color.gray, lineWidth: 1)
+                            )
                     })
                     
                 
@@ -113,8 +88,9 @@ struct ProfileView: View {
 
                 }
             }
+            .navigationBarTitleDisplayMode(.inline)
             .padding(.horizontal)
-        }
+        
        
     }
 }

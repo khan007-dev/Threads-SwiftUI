@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C96BAF512B9F8EA900EFB887 /* CurrentUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96BAF502B9F8EA900EFB887 /* CurrentUserProfileView.swift */; };
+		C96BAF542B9F94D500EFB887 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96BAF532B9F94D400EFB887 /* ProfileHeaderView.swift */; };
 		C970ED6F2B8F74020081968C /* TwitterCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970ED6E2B8F74020081968C /* TwitterCloneApp.swift */; };
 		C970ED712B8F74020081968C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970ED702B8F74020081968C /* ContentView.swift */; };
 		C970ED732B8F74060081968C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C970ED722B8F74060081968C /* Assets.xcassets */; };
@@ -42,12 +44,14 @@
 		C9B74EF32B9C4BA00061ECE5 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C9B74EF22B9C4BA00061ECE5 /* FirebaseFirestoreSwift */; };
 		C9B74EF52B9C4C530061ECE5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C9B74EF42B9C4C530061ECE5 /* FirebaseFirestore */; };
 		C9B74EF72B9C4DD60061ECE5 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B74EF62B9C4DD60061ECE5 /* UserService.swift */; };
-		C9B74EFA2B9C4F060061ECE5 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B74EF92B9C4F060061ECE5 /* ProfileViewModel.swift */; };
+		C9B74EFA2B9C4F060061ECE5 /* CurrentUserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B74EF92B9C4F060061ECE5 /* CurrentUserProfileViewModel.swift */; };
 		C9B74F0D2B9E45F00061ECE5 /* ExplorerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B74F0C2B9E45F00061ECE5 /* ExplorerViewModel.swift */; };
 		C9B74F0F2B9E48610061ECE5 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B74F0E2B9E48610061ECE5 /* PreviewProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C96BAF502B9F8EA900EFB887 /* CurrentUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileView.swift; sourceTree = "<group>"; };
+		C96BAF532B9F94D400EFB887 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		C970ED6B2B8F74020081968C /* TwitterClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C970ED6E2B8F74020081968C /* TwitterCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterCloneApp.swift; sourceTree = "<group>"; };
 		C970ED702B8F74020081968C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,7 +80,7 @@
 		C9B74ED82B9AFC970061ECE5 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C9B74EF02B9C48600061ECE5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C9B74EF62B9C4DD60061ECE5 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
-		C9B74EF92B9C4F060061ECE5 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		C9B74EF92B9C4F060061ECE5 /* CurrentUserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileViewModel.swift; sourceTree = "<group>"; };
 		C9B74F0C2B9E45F00061ECE5 /* ExplorerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorerViewModel.swift; sourceTree = "<group>"; };
 		C9B74F0E2B9E48610061ECE5 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +104,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C96BAF4E2B9F8E6500EFB887 /* CurrentUserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				C96BAF4F2B9F8E9600EFB887 /* View */,
+			);
+			path = CurrentUserProfile;
+			sourceTree = "<group>";
+		};
+		C96BAF4F2B9F8E9600EFB887 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C96BAF502B9F8EA900EFB887 /* CurrentUserProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C96BAF522B9F94BF00EFB887 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C96BAF532B9F94D400EFB887 /* ProfileHeaderView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		C970ED622B8F74020081968C = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +317,8 @@
 		C970EDCD2B909FE20081968C /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				C96BAF522B9F94BF00EFB887 /* Components */,
+				C96BAF4E2B9F8E6500EFB887 /* CurrentUserProfile */,
 				C9B74EF82B9C4EEE0061ECE5 /* ViewModel */,
 				C99425222B9511B100715904 /* EditProfile */,
 				C970EE292B93E0770081968C /* Model */,
@@ -396,7 +426,7 @@
 		C9B74EF82B9C4EEE0061ECE5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				C9B74EF92B9C4F060061ECE5 /* ProfileViewModel.swift */,
+				C9B74EF92B9C4F060061ECE5 /* CurrentUserProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -508,8 +538,10 @@
 				C970EE032B9254190081968C /* ThreadCellView.swift in Sources */,
 				C970EDAD2B9071270081968C /* ButtonModifedFile.swift in Sources */,
 				C970EE062B9266750081968C /* CircularProfileImageView.swift in Sources */,
+				C96BAF542B9F94D500EFB887 /* ProfileHeaderView.swift in Sources */,
 				C970EE082B9267220081968C /* UserCell.swift in Sources */,
-				C9B74EFA2B9C4F060061ECE5 /* ProfileViewModel.swift in Sources */,
+				C9B74EFA2B9C4F060061ECE5 /* CurrentUserProfileViewModel.swift in Sources */,
+				C96BAF512B9F8EA900EFB887 /* CurrentUserProfileView.swift in Sources */,
 				C970ED852B8F74C10081968C /* LoginView.swift in Sources */,
 				C99425C02B98988200715904 /* CreateThreadView.swift in Sources */,
 				C970ED712B8F74020081968C /* ContentView.swift in Sources */,
