@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CurrentUserProfileView: View {
     @State private var selectedFilter: ProfileThreadFilter = .threds
+    @State private var showEditProfile: Bool = false
     @Namespace var animation
     private var fitlerBarWidht: CGFloat {
         let count = CGFloat(ProfileThreadFilter.allCases.count)
@@ -55,7 +56,7 @@ struct CurrentUserProfileView: View {
                     }
                     
                     Button(action: {
-                        
+                        showEditProfile.toggle()
                     }, label: {
                         Text("Edit Profile")
                             .font(.subheadline)
@@ -108,7 +109,11 @@ struct CurrentUserProfileView: View {
                 
             
                 
-            }.toolbar {
+            }.sheet(isPresented: $showEditProfile, content: {
+                EditProfileView()
+                    .environmentObject(viewModel)
+            })
+            .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         AuthService.shared.signOut()
